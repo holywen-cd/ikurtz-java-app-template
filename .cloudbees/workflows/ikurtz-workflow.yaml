@@ -25,6 +25,7 @@ jobs:
         run: |
           find ./target
       - uses: cloudbees-io/configure-aws-credentials@v1
+        id: aws-login
         name: configure AWS credentials
         with:
           aws-secret-access-key: ${{ secrets.aws_secret_access_key }}
