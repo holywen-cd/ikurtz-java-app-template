@@ -44,6 +44,7 @@ jobs:
         name: Configure ECR
       - uses: cloudbees-io/kaniko@v1
         name: Build and Publish Container Image
+        id: image-publish
         with:
           destination: ${{ steps.aws-login.outputs.aws-account-id
             }}.dkr.ecr.us-east-1.amazonaws.com/${{ env.APP_NAME }}-image:${{
